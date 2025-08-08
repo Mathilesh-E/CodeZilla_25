@@ -170,7 +170,7 @@
         return;
       }
 
-      const response = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(inputText)}&langpair=${from}|${to}&de=kameshwaran.mm2024@vitstudent.ac.in`);
+      const response = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(inputText)}&langpair=${from}|${to}&de=santhosh.s2024@vitstudent.ac.in`);
       const data = await response.json();
       const translated = data.responseData.translatedText;
       document.getElementById("translatedText").value = translated;
@@ -179,7 +179,7 @@
         const detectedDisease = detectDisease(inputText.toLowerCase()) || detectDisease(translated.toLowerCase());
         if (detectedDisease) {
           const englishDescription = diseases[detectedDisease];
-          const descResponse = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(englishDescription)}&langpair=en|${to}&de=kameshwaran.mm2024@vitstudent.ac.in`);
+          const descResponse = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(englishDescription)}&langpair=en|${to}&de=santhosh.s2024@vitstudent.ac.in`);
           const descData = await descResponse.json();
           document.getElementById("descriptionText").value = descData.responseData.translatedText;
         } else {
@@ -231,3 +231,4 @@
   </script>
 </body>
 </html>
+
