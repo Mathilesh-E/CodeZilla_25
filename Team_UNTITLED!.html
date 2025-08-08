@@ -254,6 +254,16 @@
         alert("Nothing to speak!");
         return;
       }
+  const utterance = new SpeechSynthesisUtterance(text);
+
+      const supportedLangs = ['en', 'hi'];
+      if (!supportedLangs.includes(lang)) {
+        alert("Text-to-speech may not be supported for this language.");
+        return;
+      }
+
+      utterance.lang = lang;
+      speechSynthesis.speak(utterance);
     }
 
 function speakdes() {
@@ -289,4 +299,5 @@ function speakdes() {
     document.getElementById("descriptionBox").style.display = "none";
   </script>
 </body>
+
 </html>
